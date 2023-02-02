@@ -8,11 +8,16 @@ url = "https://newsapi.org/v2/everything?q=" \
 
 request = requests.get(url)
 content = request.json()
-print(content["articles"])
 
 email_addresses = ["testcasepython123@gmail.com", "sujathanelluri@gmail.com",
                    "pedineedi@gmail.com", "gouthamnarayana.pedinedi.437@k12"
-                                          ".frisco.org"]
+                                          ".friscoisd.org",
+                   "karthik.saripalli.643@k12.friscoisd.org"]
 
+body = ""
+for article in content["articles"]:
+	body = body + str(article["title"]) + "\n" + str(article["description"]) + "\n\n"
+
+body = body.encode("utf-8")
 for email_address in email_addresses:
-	se("Hello", email_address)
+	se(body, email_address)
