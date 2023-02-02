@@ -10,6 +10,7 @@ url = "https://newsapi.org/v2/everything?" \
       "&apiKey=ab1ef33e9fcc448b86f1e7b0cf03c98f" \
       "&language=en" \
 
+
 request = requests.get(url)
 content = request.json()
 
